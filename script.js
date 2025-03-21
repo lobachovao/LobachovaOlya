@@ -60,3 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+document.querySelectorAll(".portfolio-img").forEach((img) => {
+  img.addEventListener("click", function (event) {
+    event.preventDefault(); // Запобігає переходу за посиланням миттєво
+    this.classList.add("active"); // Додає клас для кольорового ефекту
+    setTimeout(() => {
+      window.location.href = this.parentElement.href; // Перехід за посиланням
+    }, 300); // Час відповідає transition у CSS
+  });
+});
